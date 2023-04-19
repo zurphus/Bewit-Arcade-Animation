@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+
+        body{
+            position: relative;
+            margin: 0;
+        }
+
+        #navbar{
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            box-shadow: 0 3px 10px #b2b2b2;
+            align-items: center;
+            justify-content: center;
+        }
+        #box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        #bewitLogo{
+            width: 60px;
+            height: 60px;
+            z-index: 100;
+        }
+        #text{
+            font-family: arial;
+            color: white;
+            font-size: 60px;
+	        -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgb(0, 183, 255);
+            margin-left: 10px;
+            transition: all 0.75s ease-in-out;
+        }
+        #text.activeText{
+            margin-left: -250px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="box">
+            <img id="bewitLogo" src="bewit-logo.png" alt="bewit logo">
+            <p id="text">ARCADE</p>
+        </div>
+    </div>
+
+    <script>
+
+        const box = document.getElementById('box');
+        const logo = document.getElementById('bewitLogo');
+        const text = document.getElementById('text');
+
+        box.addEventListener('click', function(){
+            text.classList.toggle('activeText');
+        });
+
+    </script>
+
+</body>
+</html>
